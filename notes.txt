@@ -1,0 +1,38 @@
+Arduino Notes
+Setup(): Function executed at the start of the program 1 time only.
+Loop(): Function executed after Setup() Forever times.
+pinMode(NUM, INPUT/OUTPUT): assign digital/analogue pin as input or output.
+X = digitalRead(NUM): after assigning pin using pinMode we give its value (High/Low) to X
+X = analogueRead(NUM): after assigning pin using pinMode we give its analogue value to X
+Delay(NUM): delays the execution of code NUM miliseconds.
+Uint8_t: short integer for saving up some space;
+
+
+PCD8544 Controller for Running LCD like Nokia 5110 LCD:
+#Using the 3 libraries:
+a)	SPI.h : Serial Peripheral Interface For controlling peripherals.(IN/OUT/CLK/CS)
+b)	Adafruit_PCD8544.h : for initializing the LCD display
+Adafruit_PCD8544 display = Adafruit_PCD8544 (CLK, DIN, DC, CS, RST)  //Clock, Data in, Data or command, Chip select).
+c)	Adafruit_GFX.h : Ready library to print and display graphics on LCD display.
+Important graphics codes:
+1)	 Serial.begin(9600); //sets the bits' serial transmission (bits/sec)
+2)	 Display.begin(); //also Display.begin(width, height) is optional, used to initialize the lcd display with width and height before using graphics libraries on lcds.
+3)	Display.setContrast(60); //60 is suitable with the 5110 display
+4)	Display.clearDisplay(); //clears the display.
+5)	Display.drawBitmap(x, y, BITMAP, BITMAP_WIDTH, BITMAP_HEIGHT, BLACK/WHITE"if no color"); //x: starting horizontal. Y:starting vertical. BITMAP: 1D array of bits to draw the display.
+6)	Display.display() // any updates are not considered on the screen before this line. First call for this method starts up the splash screen that can be canceled using the display.clearDisplay() method.
+7)	Display.drawLine(x1, y1, x2, y2, BLACK/WHITE);
+8)	Display.fillCircle(x, y, radius?, BLACK);
+9)	Display.setTextSize(NUM:1);
+10)	Display.setTextColor(BLACK);
+11)	Display.setCursor(x, y);
+12)	Display.print("TEXT");
+13)	Display.println("TEXT");
+14)	Display.setRotation(NUM); //90degrees per 1
+15)	Display.invertDisplay(true/false);
+16)	Display.drawCircle(x, y, r ,BLACK);
+17)	Display.fillRect(x, y, WIDTH, HEIGHT, BLACK); //drawRect
+18)	Display.drawTriangle(x1, y1, x2, y2, x3, y3, BLACK); //fillTriangle
+19)	Display.drawRoundRect(x, y, width, height, BLACK); //fillRoundRect
+20)	Display.drawLine(x1, y1, x2, y2, BLACK);
+21)	display.drawPixel(x, y, BLACK);
