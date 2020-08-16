@@ -12,4 +12,8 @@
 - Adafruit GFX & PCD8544
 - PCM
 
+**Extra feature**
+
+- Using a self-made audio amplifier for the sound effects.
+
 ![](demo%20gif.gif)
