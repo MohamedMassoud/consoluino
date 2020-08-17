@@ -1,6 +1,6 @@
 # Consoluino
 Consoluino is a custom-made gaming console & simple game engine using Arduino nano and Arduino IDE.
-Consoluino is a custom-made gaming console & simple game engine using Arduino nano and Arduino IDE.
+
 - Ping pong game attached as an example.
 
 **Tools used**
